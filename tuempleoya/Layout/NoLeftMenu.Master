@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NoLeftMenu.master.cs" Inherits="tuempleoya.Layout.NoLeftMenu" %>
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tu Empleo Ya</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/alertify.min.css" rel="stylesheet" />
+    <link href="../Content/jquery-ui.min.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="images/favicon.png">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"> <img src="../Images/IMG_20190420_035645_867.JPG" alt="Tu Empleo Ya" class="img-responsive" style="height:50px;" /> </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/" class="h4">Tu Empleo Ya <span class="sr-only">Pag Inicial</span></a></li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/Vistas/Registro.aspx">Registrate</a></li>
+        <li class="dropdown" runat="server" id="liUsuario">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <asp:Literal runat="server" ID="litUsuario" Text="Nombre de Usuario" />
+              <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="Vistas/Perfil">Perfil</a></li>
+            <li><a href="Vistas/HojaVida">Actualizar Hoja de Vida</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="Vistas/CerrarSession">Cerrar sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+        <div class="col-xs-12 col-md-12">
+        
+            <script src="../Scripts/jquery.js"></script>
+            <script src="../Scripts/bootstrap.min.js"></script>
+            <script src="../Scripts/alertify.min.js"></script>
+            <script src="../Scripts/notify.min.js"></script>
+            <script src="../Scripts/common.js"></script>
+            <form id="form1" runat="server">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    <Scripts>
+                    </Scripts>
+                </asp:ScriptManager> 
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
