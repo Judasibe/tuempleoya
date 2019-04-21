@@ -24,27 +24,32 @@ AS
 
 	Declare @tbl As Table(id int identity(1,1), idusuario Int, usuario varchar(30), tipousuario varchar(20))
 
-	If (Select Count(*) From Empresas Where usuario = @usuario And Clave = @pass)<=0
+	If (Select Count(*) From Empresas Where usuario = @usuario And Clave = @pass And Estado = 1)<=0
 	Begin
 		
-		If (Select Count(*) From Usuario Where NombreUsuario = @usuario And Clave = @pass)<=0
+		If (Select Count(*) From Usuario Where NombreUsuario = @usuario And Clave = @pass And Estado = 1)<=0
 		Begin
 			Raiserror('Usuario o Contrseña Erronea', 16,1)
 			Return
 		End
 		Declare @usertipe SmallInt
 
-		Select @id = Id From Usuario Where NombreUsuario = @usuario And Clave = @pass
-		Select @usertipe = Rol From Usuario Where NombreUsuario = @usuario And Clave = @pass
+		Select @id = Id From Usuario Where NombreUsuario = @usuario And Clave = @pass And Estado = 1
+		Select @usertipe = Rol From Usuario Where NombreUsuario = @usuario And Clave = @pass And Estado = 1
 		If @usertipe=1
 		Begin
 			Insert Into @tbl(idusuario, usuario, tipousuario)
 			Select @id, @usuario, 'Usuario'
 		End
-		Else
+		Else If @usertipe=3
 		Begin
 			Insert Into @tbl(idusuario, usuario, tipousuario)
 			Select @id, @usuario, 'Administrador'
+		End
+		Else
+		Begin
+			Raiserror('Error No Controlado, Login', 16,1)
+			Return
 		End
 		
 	End
@@ -56,5 +61,5 @@ AS
 	End
 
 
-	Select id, usuario, tipousuario From @tbl
+	Select id, idusuario,usuario, tipousuario From @tbl
 GO

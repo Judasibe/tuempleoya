@@ -58,10 +58,22 @@
 
                 if (string.IsNullOrWhiteSpace(id))
                 {
+                    object img = string.Empty;
+                    if (imgImagen.HasFile){
+                        string namefoto = nombre.ToString() + "_" + imgImagen.FileName;
+                        string carpeta = "/Images/Empresas";
+                        img = string.Format("{0}/{1}", carpeta, namefoto);
+                    }
                     object pass = txtClave.Text;
                     object confrm = txtConfirmacion.Text;
 
-                    id = ObtenerValor(Controlador.NuevaEmpresa(nombre, celular, telefono, email, descripcion, categoria, usuario, pass, confrm));
+                    id = ObtenerValor(Controlador.NuevaEmpresa(nombre, celular, telefono, email, descripcion, categoria, usuario, pass, confrm, img));
+                    if (imgImagen.HasFile) {
+                        string namefoto = nombre.ToString() + "_" + imgImagen.FileName;
+                        string carpeta = "/Images/Empresas";
+                        img = string.Format("{0}/{1}", carpeta, namefoto);
+                        imgImagen.SaveAs(Server.MapPath(img.ToString()));
+                    }
                 }
                 else
                 {

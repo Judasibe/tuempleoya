@@ -1,17 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace tuempleoya
+﻿namespace tuempleoya
 {
-    public partial class Default : System.Web.UI.Page
+    using System;
+    using tuempleoya.Controladores.Usuarios;
+    using tuempleoya.Vistas;
+
+    public partial class Default : BaseVistas
     {
+        Publicacion Controller;
+        public Default()
+        {
+            Controller = new Publicacion();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            object categoria = Request["categoria"];
+            repeaterPublicaciones.DataSource = Controller.MostrarTodasLasPublicaciones(categoria);
+            repeaterPublicaciones.DataBind();
         }
     }
 }

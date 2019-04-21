@@ -4,7 +4,7 @@
 
     public class Modelo
     {
-        protected Conexion con;
+        protected Conexion con = new Conexion();
 
         public Modelo()
         {

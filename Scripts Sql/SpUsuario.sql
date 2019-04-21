@@ -58,7 +58,12 @@ AS
 		Insert Into Usuario(Nombre, Apellidos, Email, numeroCelular, NombreUsuario, Clave, FechaCreacion, FechaModificacion, Estado, Rol)
 		Select @Nombre, @Apellidos, @Email, @numeroCelular, @NombreUsuario, @Clave, GetDate(),GetDate(), 1, 1
 
-		Select scope_identity() As id
+		Select @id = scope_identity() 
+
+		Insert Into HojaDevida(Archivo, IdUsuario, FechaModificacion, Estado)
+		Select '', @id, GetDate(), 1
+
+		Select @id As id
 	End	
 
 	Else if(@oper='U')

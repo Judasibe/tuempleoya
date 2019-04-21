@@ -9,11 +9,11 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/alertify.min.css" rel="stylesheet" />
-    <link href="../Content/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/alertify.min.css" rel="stylesheet" />
+    <link href="/Content/jquery-ui.min.css" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="/images/favicon.png">
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"> <img src="../Images/IMG_20190420_035645_867.JPG" alt="Tu Empleo Ya" class="img-responsive" style="height:50px;" /> </a>
+      <a class="navbar-brand" href="/"> <img src="/Images/IMG_20190420_035645_867.JPG" alt="Tu Empleo Ya" class="img-responsive" style="height:50px;" /> </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,14 +44,12 @@
               <span class="caret"></span>
           </a>
           <ul class="dropdown-menu" runat="server" id="ulUsuario" visible="false">
-            <li><a href="Vistas/Perfil.aspx">Perfil</a></li>
-            <li><a href="Vistas/HojaVida.aspx">Actualizar Hoja de Vida</a></li>
+            <li><a href="/Vistas/Perfil.aspx">Perfil</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="Vistas/CerrarSession.aspx">Cerrar sesión</a></li>
           </ul>
             
           <ul class="dropdown-menu" runat="server" id="ulEmpresa" visible="false">
-            <li><a href="Vistas/Perfil.aspx">Perfil</a></li>
             <li><a href="Vistas/Usuarios/Ofertas.aspx">Ofertas</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="Vistas/CerrarSession.aspx">Cerrar sesión</a></li>
@@ -69,21 +67,33 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="hidden-xs col-sm-3 col-md-2" style="height:100vh">
             <div class="row">
                 <div class="col-xs-12">
-                    
+                    <br />
+                    <asp:Repeater runat="server" ID="repeterCategorias">
+                        <HeaderTemplate>
+                            <div class="form-group">
+                                <label>Categorias de busqueda</label>
+                            </div>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <div class="form-group">
+                                <a class="" href='/Default.aspx?categoria=<%#Eval("ID") %>'><%#Eval("Nombre") %></a>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-9 col-md-10">
         
-            <script src="../Scripts/jquery.js"></script>
-            <script src="../Scripts/bootstrap.min.js"></script>
-            <script src="../Scripts/alertify.min.js"></script>
-            <script src="../Scripts/notify.min.js"></script>
-            <script src="../Scripts/common.js"></script>
+            <script src="/Scripts/jquery.js"></script>
+            <script src="/Scripts/bootstrap.min.js"></script>
+            <script src="/Scripts/alertify.min.js"></script>
+            <script src="/Scripts/notify.min.js"></script>
+            <script src="/Scripts/common.js"></script>
             <form id="form1" runat="server">
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
                     <Scripts>

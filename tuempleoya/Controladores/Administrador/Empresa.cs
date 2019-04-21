@@ -6,7 +6,7 @@
     public class Empresa : Modelo
     {
         public object NuevaEmpresa(object nombre, object celular, object telefono, object email, object descripcion
-                                    , object categoria, object usuario, object pass, object confirm)
+                                    , object categoria, object usuario, object pass, object confirm, object img)
         {
             return con.EjecutarProcedimiento(
                   "SpEmpresas"
@@ -21,6 +21,7 @@
 
                 , new ParametroSP(pass, "@pass", SqlDbType.VarChar, 15)
                 , new ParametroSP(confirm, "@confirm", SqlDbType.VarChar, 15)
+                , new ParametroSP(img, "@img", SqlDbType.VarChar, -1)
             ).Tables[0].Rows[0]["id"];
         }
 

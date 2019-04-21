@@ -4,16 +4,16 @@
     using System.Data;
     using tuempleoya.Controladores.Administrador;
 
-    public partial class NuevaCategoria : BaseVistas
+    public partial class NuevoSkill : BaseVistas
     {
-        private Categoria controlador;
-        public NuevaCategoria()
+        private Oferta Controlador;
+        public NuevoSkill()
         {
-            controlador = new Categoria();
+            this.Controlador = new Oferta();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) 
+            if (!IsPostBack)
             {
                 try
                 {
@@ -21,9 +21,9 @@
 
                     if (!string.IsNullOrWhiteSpace(id))
                     {
-                        DataRow dr = controlador.MostrarCategoria(id).Tables[0].Rows[0];
-                        txtCartegoria.Text = ObtenerValor(dr["Nombre"]);
-                        lblTitle.Text = "Modificar Categoria";
+                        DataRow dr = Controlador.MostrarSkill(id).Tables[0].Rows[0];
+                        txtSkill.Text = ObtenerValor(dr["Nombre"]);
+                        lblTitle.Text = "Modificar Skill";
                     }
                 }
                 catch (Exception ex)
@@ -33,21 +33,22 @@
             }
         }
 
-        protected void btnGuardarCategoria_Click(object sender, EventArgs e)
+        protected void btnGuardarSkill_Click(object sender, EventArgs e)
         {
             try
-            {   
+            {
                 string id = this.ObtenerValor(Request["id"]);
-                object categoria = this.txtCartegoria.Text.ToUpper() ;
+                object skill = this.txtSkill.Text.ToUpper();
 
                 if (string.IsNullOrWhiteSpace(id))
                 {
-                    id = ObtenerValor(controlador.GuardarCategoria(categoria).Tables[0].Rows[0]["id"]);
+                    id = ObtenerValor(Controlador.NuevoSkill(skill));
                 }
-                else {
-                    controlador.ModificarCategoria(categoria, id);
+                else
+                {
+                    Controlador.ModificarSkill(id, skill);
                 }
-                this.AbrirEnlace("NuevaCategoria.aspx?id=" + id);
+                this.AbrirEnlace("NuevoSkill.aspx?id=" + id);
             }
             catch (Exception ex)
             {

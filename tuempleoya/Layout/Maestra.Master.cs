@@ -4,11 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using tuempleoya.Controladores.Usuarios;
 
 namespace tuempleoya.Layout
 {
     public partial class Maestra : System.Web.UI.MasterPage
     {
+        Publicacion Controller;
+        public Maestra()
+        {
+            Controller = new Publicacion();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack){
@@ -36,6 +42,9 @@ namespace tuempleoya.Layout
                     aRegister.Visible = true;
                     aIniciarSesion.Visible = true;
                 }
+
+                repeterCategorias.DataSource = Controller.BuscarCategorias();
+                repeterCategorias.DataBind();
             }
         }
     }

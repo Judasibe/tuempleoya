@@ -35,7 +35,7 @@
                 FormsAuthentication.RedirectFromLoginPage(lgLoin.UserName, false);
 
                 Session["Session"] = newSessionId;
-                Session["IdUsuario"] = ObtenerValor(dr["id"]);
+                Session["IdUsuario"] = ObtenerValor(dr["idusuario"]);
                 Session["Usuario"] = ObtenerValor(dr["usuario"]);
                 Session["TipoUsuario"] = ObtenerValor(dr["tipousuario"]);
 

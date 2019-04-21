@@ -22,12 +22,12 @@ namespace tuempleoya.Vistas.Usuarios {
         protected global::System.Web.UI.UpdatePanel pnlOfertas;
         
         /// <summary>
-        /// Control repeater.
+        /// Control repeaterOfertas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeater;
+        protected global::System.Web.UI.WebControls.Repeater repeaterOfertas;
     }
 }

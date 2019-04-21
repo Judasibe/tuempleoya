@@ -41,5 +41,6 @@
                 , new ParametroSP(categoria, "@categoria", SqlDbType.VarChar, 100)
             );
         }
+
     }
 }

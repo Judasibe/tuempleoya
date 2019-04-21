@@ -169,6 +169,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
+    <Content Include="Images\Empresas\LogoGenerico.png" />
     <Content Include="Images\heroAccent.png" />
     <Content Include="Images\IMG_20190420_035645_867.JPG" />
     <Content Include="Images\orderedList0.png" />
@@ -195,6 +196,7 @@
     <Content Include="Layout\Administrador.Master" />
     <Content Include="Layout\NoLeftMenu.Master" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Publicaciones.aspx" />
     <Content Include="Scripts\alertify.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -212,11 +214,14 @@
     <Content Include="Global.asax" />
     <Content Include="Vistas\CerrarSession.aspx" />
     <Content Include="Vistas\Login.aspx" />
+    <Content Include="Vistas\Perfil.aspx" />
     <Content Include="Vistas\Registro.aspx" />
     <Content Include="Vistas\Usuarios\Administrador\Categorias.aspx" />
     <Content Include="Vistas\Usuarios\Administrador\Empresas.aspx" />
     <Content Include="Vistas\Usuarios\Administrador\NuevaCategoria.aspx" />
     <Content Include="Vistas\Usuarios\Administrador\NuevaEmpresa.aspx" />
+    <Content Include="Vistas\Usuarios\Administrador\NuevoSkill.aspx" />
+    <Content Include="Vistas\Usuarios\Administrador\Skills.aspx" />
     <Content Include="Vistas\Usuarios\NuevaOferta.aspx" />
     <Content Include="Vistas\Usuarios\Ofertas.aspx" />
     <Content Include="Web.config" />
@@ -260,7 +265,9 @@
     </Compile>
     <Compile Include="Controladores\Administrador\Categoria.cs" />
     <Compile Include="Controladores\Administrador\Empresa.cs" />
+    <Compile Include="Controladores\Administrador\Oferta.cs" />
     <Compile Include="Controladores\Modelo.cs" />
+    <Compile Include="Controladores\Usuarios\Publicacion.cs" />
     <Compile Include="Controladores\Usuarios\Usuario.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -294,6 +301,13 @@
       <DependentUpon>NoLeftMenu.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publicaciones.aspx.cs">
+      <DependentUpon>Publicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publicaciones.aspx.designer.cs">
+      <DependentUpon>Publicaciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\BaseVistas.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -310,6 +324,13 @@
     </Compile>
     <Compile Include="Vistas\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
@@ -346,6 +367,20 @@
     </Compile>
     <Compile Include="Vistas\Usuarios\Administrador\NuevaEmpresa.aspx.designer.cs">
       <DependentUpon>NuevaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Usuarios\Administrador\NuevoSkill.aspx.cs">
+      <DependentUpon>NuevoSkill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Usuarios\Administrador\NuevoSkill.aspx.designer.cs">
+      <DependentUpon>NuevoSkill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Usuarios\Administrador\Skills.aspx.cs">
+      <DependentUpon>Skills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Usuarios\Administrador\Skills.aspx.designer.cs">
+      <DependentUpon>Skills.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Usuarios\NuevaOferta.aspx.cs">
       <DependentUpon>NuevaOferta.aspx</DependentUpon>

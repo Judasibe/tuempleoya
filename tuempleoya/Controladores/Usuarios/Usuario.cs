@@ -62,6 +62,25 @@
                 , new ParametroSP(pass, "@pass", SqlDbType.VarChar, 15)
             );
         }
-             
+
+
+        public DataSet BuscarHojaVida(object usuario)
+        {
+            return con.EjecutarProcedimiento(
+                  "SpPublicaciones"
+                , new ParametroSP("HV", "@oper", SqlDbType.VarChar, 30)
+                , new ParametroSP(usuario, "@user", SqlDbType.VarChar, 30)
+            );
+        }
+
+        public void GuardarHojaVida(object usuario, object archivo)
+        {
+            this.con.EjecutarProcedimiento(
+                  "SpPublicaciones"
+                , new ParametroSP("AH", "@oper", SqlDbType.VarChar, 30)
+                , new ParametroSP(usuario, "@user", SqlDbType.VarChar, 30)
+                , new ParametroSP(archivo, "@archivo", SqlDbType.VarChar, -1)
+            );
+        }
     }
 }

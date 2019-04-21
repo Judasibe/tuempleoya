@@ -14,6 +14,7 @@ CREATE PROCEDURE [dbo].SpEmpresas
 	, @usuario varchar(30)		= ''
 	, @pass varchar(15)			= ''
 	, @confirm varchar(15)		= ''
+	, @img varchar(max)			= ''
 )
 AS
 	SET NOCOUNT OFF;
@@ -77,8 +78,8 @@ AS
 			Return
 		End
 
-		Insert Into Empresas(Nombre, Celular, Telefono, Email, Descripcion, IdCategoria, FechaCreacion, FechaModificacion, Estado, Usuario, Clave)
-		Select @nombre, @celular, @telefono, @email, @descripcion, @categorias, getDate(), GetDate(), 1, @usuario, @pass
+		Insert Into Empresas(Nombre, Celular, Telefono, Email, Descripcion, IdCategoria, FechaCreacion, FechaModificacion, Estado, Usuario, Clave, Imagen)
+		Select @nombre, @celular, @telefono, @email, @descripcion, @categorias, getDate(), GetDate(), 1, @usuario, @pass, @img
 
 		Select scope_identity() As id
 	End	
@@ -130,7 +131,7 @@ AS
 
 		Update Empresas
 		Set   Nombre = @nombre, Celular = @celular, Telefono = @telefono, Email = @email, Descripcion = @descripcion
-			, IdCategoria=@categorias, FechaModificacion = GetDate(), Usuario = @usuario
+			, IdCategoria=@categorias, FechaModificacion = GetDate(), Usuario = @usuario, Imagen = @img
 		Where ID = @id
 	End
 
@@ -140,7 +141,7 @@ AS
 		Begin
 			Select Empresas.Nombre, Empresas.Celular, Empresas.Telefono, Empresas.Email, Empresas.Descripcion, Empresas.IdCategoria
 					, Empresas.FechaCreacion, Empresas.FechaModificacion, Empresas.Estado, Empresas.ID, Empresas.Usuario
-					, Categorias.Nombre As Categoria
+					, Categorias.Nombre As Categoria, IsNull(Empresas.Imagen, '')
 			From Empresas
 				Inner Join Categorias On Empresas.IdCategoria = Categorias.ID
 			Where Empresas.Estado = 1
@@ -148,7 +149,7 @@ AS
 		Else
 		Begin
 			Select Empresas.Nombre, Empresas.Celular, Empresas.Telefono, Empresas.Email, Empresas.Descripcion, Empresas.IdCategoria
-					, Empresas.FechaCreacion, Empresas.FechaModificacion, Empresas.Estado, Empresas.ID, Usuario
+					, Empresas.FechaCreacion, Empresas.FechaModificacion, Empresas.Estado, Empresas.ID, Usuario, IsNull(Imagen, '')
 			From Empresas
 			Where Empresas.ID = @id
 		End
@@ -163,7 +164,7 @@ AS
 
 		Select Empresas.Nombre, Empresas.Celular, Empresas.Telefono, Empresas.Email, Empresas.Descripcion, Empresas.IdCategoria
 				, Empresas.FechaCreacion, Empresas.FechaModificacion, Empresas.Estado, Empresas.ID, Empresas.Usuario
-				, Categorias.Nombre As Categoria
+				, Categorias.Nombre As Categoria, IsNull(Empresas.Imagen, '')
 		From Empresas
 			Inner Join Categorias On Empresas.IdCategoria = Categorias.ID
 		Where Empresas.Estado = 1

@@ -29,16 +29,13 @@
         public void MostrarMensaje(string mensaje, TipoMensaje tipo)
         {
             string alertTipo;
-            if (tipo == TipoMensaje.ADVERTENCIA)
-            {
+            if (tipo == TipoMensaje.ADVERTENCIA) {
                 alertTipo = "warn";
             }
-            else if (tipo == TipoMensaje.ERROR)
-            {
+            else if (tipo == TipoMensaje.ERROR) {
                 alertTipo = "error";
             }
-            else
-            {
+            else {
                 alertTipo = "success";
             }
 

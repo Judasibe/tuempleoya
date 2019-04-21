@@ -7,99 +7,90 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace tuempleoya.Layout {
+namespace tuempleoya {
     
     
-    public partial class NoLeftMenu {
+    public partial class Publicaciones {
         
         /// <summary>
-        /// Control aRegister.
+        /// Control litTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor aRegister;
+        protected global::System.Web.UI.WebControls.Literal litTitulo;
         
         /// <summary>
-        /// Control aIniciarSesion.
+        /// Control btnAspirarOferta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor aIniciarSesion;
+        protected global::System.Web.UI.WebControls.Button btnAspirarOferta;
         
         /// <summary>
-        /// Control liUsuario.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
-        /// Control litUsuario.
+        /// Control txtValor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtValor;
         
         /// <summary>
-        /// Control ulUsuario.
+        /// Control txtTiempo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ulUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtTiempo;
         
         /// <summary>
-        /// Control ulEmpresa.
+        /// Control txtCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ulEmpresa;
+        protected global::System.Web.UI.WebControls.TextBox txtCategoria;
         
         /// <summary>
-        /// Control ulAdmin.
+        /// Control imgempresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ulAdmin;
+        protected global::System.Web.UI.WebControls.Image imgempresa;
         
         /// <summary>
-        /// Control form1.
+        /// Control lblNombreEmpresa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblNombreEmpresa;
         
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control repeterRequisitos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Repeater repeterRequisitos;
     }
 }

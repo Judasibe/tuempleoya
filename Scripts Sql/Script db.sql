@@ -31,6 +31,7 @@ Create table Empresas
 	, Descripcion varchar(800)
 	, Usuario  varchar(30)
 	, Clave varchar(50)
+	, Imagen varchar(max)
 	, IdCategoria Int Not Null
 	, FechaCreacion SmallDateTime Not Null
 	, FechaModificacion SmallDateTime Not Null
@@ -58,3 +59,53 @@ Create Table Usuario
 
 Insert Into Usuario(Nombre, Apellidos, Email, numeroCelular, NombreUsuario, Clave, FechaCreacion, FechaModificacion, Estado, Rol)
 Select 'Super', 'Administrador', '', '', 'SuperAdmin', 'aiorostec3991', GetDate(),GetDate(), 1, 3
+
+Create Table Skills
+(
+	  Id Int Primary Key Identity(1,1)
+	, Nombre varchar(50) Not null
+	, FechaCreacion SmallDateTime
+	, FechaModificacion SmallDateTime
+	, Estado SmallInt
+)
+
+-- Select * From Ofertas
+Create Table Ofertas
+(
+	  Id Int Primary Key Identity(1,1)
+	, Titulo varchar(50) Not null
+	, Descripcion varchar(400)
+	, Valor Money
+	, Tiempo Varchar(40) Not Null
+	, idCategoria Int Not Null
+	, idEmpresa Int Not Null
+	, FechaCreacion SmallDateTime
+	, FechaModificacion SmallDateTime
+	, Estado SmallInt
+)
+
+Create Table OfertaSkill
+(
+	  Id Int Primary Key Identity(1,1)
+	, IdOferta Int Not Null
+	, IdSkill Int Not Null
+	, Descripcion Varchar(150) Not Null
+	, FechaModificacion SmallDateTime
+	, Estado SmallInt
+)
+Create Table AspirarOferta
+(
+	  Id Int Primary Key Identity(1,1)
+	, IdOferta Int Not Null
+	, IdUsuario Int Not Null
+	, FechaModificacion SmallDateTime
+	, Estado SmallInt
+)
+Create Table HojaDevida
+(
+	  Id Int Primary Key Identity(1,1)
+	, Archivo varchar(max) Not Null
+	, IdUsuario Int Not Null
+	, FechaModificacion SmallDateTime
+	, Estado SmallInt
+)

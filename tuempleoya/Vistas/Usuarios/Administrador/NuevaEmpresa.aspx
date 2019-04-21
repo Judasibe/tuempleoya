@@ -51,18 +51,22 @@
                         </div>
 
                         <div runat="server"  id="divPass">
-                        <div class="col-xs-12 col-md-4">
-                            <div class="form-group">
-                                <label>Contraseña</label>
-                                <asp:TextBox runat="server" ID="txtClave" CssClass="form-control" ClientIDMode="Static" TextMode="Password" />
+                            <div class="col-xs-12 col-md-4">
+                                <div class="form-group">
+                                    <label>Contraseña</label>
+                                    <asp:TextBox runat="server" ID="txtClave" CssClass="form-control" ClientIDMode="Static" TextMode="Password" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-12 col-md-4">
-                            <div class="form-group">
-                                <label>Confirmación</label>
-                                <asp:TextBox runat="server" ID="txtConfirmacion" CssClass="form-control" ClientIDMode="Static"  TextMode="Password"/>
+                            <div class="col-xs-12 col-md-4">
+                                <div class="form-group">
+                                    <label>Confirmación</label>
+                                    <asp:TextBox runat="server" ID="txtConfirmacion" CssClass="form-control" ClientIDMode="Static"  TextMode="Password"/>
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-xs-12 col-md-4">
+                                <label>Imagen</label>
+                                <asp:FileUpload runat="server" ID="imgImagen" CssClass="form-control" accept="image/*" />
+                            </div>
                         </div>
 
                         <div class="col-xs-12">
@@ -75,7 +79,7 @@
                     </div>
                 </ContentTemplate>
                 <Triggers>
-                    <asp:AsyncPostBackTrigger ControlID="btnGuardarEmpresa" />
+                    <asp:PostBackTrigger ControlID="btnGuardarEmpresa" />
                 </Triggers>
             </asp:UpdatePanel>
             <div class="row">

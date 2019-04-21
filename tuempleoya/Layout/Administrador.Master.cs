@@ -16,7 +16,13 @@
                 }
                 else if (!(ObtenerValor(Session["TipoUsuario"]).Equals("Administrador")))
                 {
-                    Response.Redirect("/");
+                    if (!(ObtenerValor(Session["TipoUsuario"]).Equals("Empresa")))
+                    {
+                        Response.Redirect("/");
+                    }
+                    else {
+                        Response.Redirect("/Vistas/Usuarios/Ofertas.aspx");
+                    }
                 }
             }
         }

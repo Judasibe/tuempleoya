@@ -9,11 +9,11 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Content/alertify.min.css" rel="stylesheet" />
-    <link href="../Content/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/alertify.min.css" rel="stylesheet" />
+    <link href="/Content/jquery-ui.min.css" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="/images/favicon.png">
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"> <img src="../Images/IMG_20190420_035645_867.JPG" alt="Tu Empleo Ya" class="img-responsive" style="height:50px;" /> </a>
+      <a class="navbar-brand" href="/"> <img src="/Images/IMG_20190420_035645_867.JPG" alt="Tu Empleo Ya" class="img-responsive" style="height:50px;" /> </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,19 +36,32 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Vistas/Registro.aspx">Registrate</a></li>
+        <li><a href="/Vistas/Registro.aspx" runat="server" id="aRegister" >Registrate</a></li>
+        <li><a href="/Vistas/Login.aspx" runat="server" id="aIniciarSesion" >Iniciar Sesion</a></li>
         <li class="dropdown" runat="server" id="liUsuario">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <asp:Literal runat="server" ID="litUsuario" Text="Nombre de Usuario" />
+              <asp:Literal runat="server" ID="litUsuario"/>
               <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu">
-            <li><a href="Vistas/Perfil">Perfil</a></li>
-            <li><a href="Vistas/HojaVida">Actualizar Hoja de Vida</a></li>
+          <ul class="dropdown-menu" runat="server" id="ulUsuario" visible="false">
+            <li><a href="/Vistas/Perfil.aspx">Perfil</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="Vistas/CerrarSession">Cerrar sesión</a></li>
+            <li><a href="/Vistas/CerrarSession.aspx">Cerrar sesión</a></li>
+          </ul>
+            
+          <ul class="dropdown-menu" runat="server" id="ulEmpresa" visible="false">
+            <li><a href="/Vistas/Usuarios/Ofertas.aspx">Ofertas</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/Vistas/CerrarSession.aspx">Cerrar sesión</a></li>
+          </ul>
+          <ul class="dropdown-menu" runat="server" id="ulAdmin" visible="false">
+            <li><a href="/Vistas/Usuarios/Administrador/Categorias.aspx">Administración</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/Vistas/CerrarSession.aspx">Cerrar sesión</a></li>
           </ul>
         </li>
+
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -57,11 +70,11 @@
     <div class="container">
         <div class="col-xs-12 col-md-12">
         
-            <script src="../Scripts/jquery.js"></script>
-            <script src="../Scripts/bootstrap.min.js"></script>
-            <script src="../Scripts/alertify.min.js"></script>
-            <script src="../Scripts/notify.min.js"></script>
-            <script src="../Scripts/common.js"></script>
+            <script src="/Scripts/jquery.js"></script>
+            <script src="/Scripts/bootstrap.min.js"></script>
+            <script src="/Scripts/alertify.min.js"></script>
+            <script src="/Scripts/notify.min.js"></script>
+            <script src="/Scripts/common.js"></script>
             <form id="form1" runat="server">
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
                     <Scripts>

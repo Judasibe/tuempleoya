@@ -4,19 +4,19 @@
     using System.Web.UI.WebControls;
     using tuempleoya.Controladores.Administrador;
 
-    public partial class Categorias : BaseVistas
+    public partial class Skills : BaseVistas
     {
-        private Categoria Controlador;
-        public Categorias()
+        private Oferta Controlador;
+        public Skills()
         {
-            Controlador = new Categoria();
+            Controlador = new Oferta();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                gridCategorias.DataSource = Controlador.MostrarCategoria();
-                gridCategorias.DataBind();
+                gridSkill.DataSource = Controlador.MostrarSkill();
+                gridSkill.DataBind();
             }
             catch (Exception ex)
             {
@@ -24,14 +24,14 @@
             }
         }
 
-        protected void btnEliminarCategoria_Click(object sender, EventArgs e)
+        protected void btnEliminarSkill_Click(object sender, EventArgs e)
         {
             try
             {
                 object id = ((LinkButton)sender).CommandArgument;
-                gridCategorias.DataSource = Controlador.EliminarCategoria(id);
-                gridCategorias.DataBind();
-                pnlCategorias.Update();
+                gridSkill.DataSource = Controlador.EliminarSkill(id);
+                gridSkill.DataBind();
+                pnlSkill.Update();
             }
             catch (Exception ex)
             {
