@@ -197,6 +197,14 @@
     <Content Include="Layout\NoLeftMenu.Master" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Publicaciones.aspx" />
+    <Content Include="Scripts Sql\GuardarLog.sql" />
+    <Content Include="Scripts Sql\Script db.sql" />
+    <Content Include="Scripts Sql\SpCategoria.sql" />
+    <Content Include="Scripts Sql\SpEmpresas.sql" />
+    <Content Include="Scripts Sql\SpLogin.sql" />
+    <Content Include="Scripts Sql\SpOfertas.sql" />
+    <Content Include="Scripts Sql\SpPublicaciones.sql" />
+    <Content Include="Scripts Sql\SpUsuario.sql" />
     <Content Include="Scripts\alertify.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
