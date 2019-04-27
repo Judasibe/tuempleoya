@@ -1,19 +1,16 @@
 ﻿
 namespace Datos
 {
+    using System.Configuration;
     using System.Data;
     using System.Data.SqlClient;
 
     public class Conexion
     {
-        #region Propiedades
-        string servidor = ".";
-        string database = "tuempleoya";
-        #endregion
         // Conexión a la base de datos
         private string getConexion()
         {
-            return string.Format("Data Source={0};Initial Catalog={1};Integrated Security=true;", servidor, database) ;
+            return ConfigurationManager.ConnectionStrings["ConnexionPropia"].ToString();
         }
 
         /// <summary>
